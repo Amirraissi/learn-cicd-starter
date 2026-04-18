@@ -39,7 +39,7 @@
             const noteContent = document.getElementById('newNoteContent').value;
             const response = await fetchWithAlert(`${API_BASE}/notes`,
                 {
-                    method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `ApiKey ${currentUserAPIKey}` },
+                    method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': ` ${currentUserAPIKey}` },
                     body: JSON.stringify({ note: noteContent })
                 });
             const note = await response.json();
