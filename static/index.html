@@ -39,7 +39,7 @@
             const noteContent = document.getElementById('newNoteContent').value;
             const response = await fetchWithAlert(`${API_BASE}/notes`,
                 {
-                    method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `ApiKey ${currentUserAPIKey}` },
+                    method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': ` ${currentUserAPIKey}` },
                     body: JSON.stringify({ note: noteContent })
                 });
             const note = await response.json();
@@ -47,7 +47,7 @@
         }
 
         async function getUser() {
-            const response = await fetchWithAlert(`${API_BASE}/users`, { headers: { 'Authorization': `ApiKey ${currentUserAPIKey}` } });
+            const response = await fetchWithAlert(`${API_BASE}/users`, { headers: { 'Authorization': ` ${currentUserAPIKey}` } });
             return await response.json();
         }
 
@@ -55,7 +55,7 @@
             if (!currentUser) {
                 return;
             }
-            const response = await fetchWithAlert(`${API_BASE}/notes`, { headers: { 'Authorization': `ApiKey ${currentUserAPIKey}` } });
+            const response = await fetchWithAlert(`${API_BASE}/notes`, { headers: { 'Authorization': ` ${currentUserAPIKey}` } });
             const notes = await response.json();
             const notesContainer = document.getElementById('notes');
             notesContainer.innerHTML = '';
