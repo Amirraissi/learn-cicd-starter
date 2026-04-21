@@ -1,5 +1,5 @@
 # learn-cicd-starter (Notely)
-iadd this for testing pull request 
+iadd this for testing pull request
 
 This repo contains the starter code for the "Notely" application for the "Learn CICD" course on [Boot.dev](https://boot.dev).
 

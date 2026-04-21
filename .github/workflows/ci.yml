@@ -18,5 +18,9 @@ jobs:
         with:
           go-version: "1.26.0"
 
-      - name: Force Failure
-        run: go test -cover ./... 
+      - name: run go check
+        run: go test -cover ./...
+      - name: INSTALL gosec
+        run: go install github.com/securego/gosec/v2/cmd/gosec@latest
+      - name: run gosec
+        run: gosec ./..
